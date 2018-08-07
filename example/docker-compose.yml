@@ -1,0 +1,10 @@
+version: '2.0'
+services:
+  jar_container:
+    build:
+      context: https://github.com/keckelt/openjdk11-alpine
+      args:
+        JDK_BUILD: 25
+    volumes:
+      - './hello_world.jar:/Main.jar'
+    command: java -jar /Main.jar
