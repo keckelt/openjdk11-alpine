@@ -7,8 +7,8 @@ ENV LANG C.UTF-8
 # There might be newer builds, but not all are published (for apline) at: http://jdk.java.net/11/
 
 ENV JAVA_HOME="/jdk-11"
-ARG JDK_BUILD="25"
-ENV JDK_ARCHIVE="openjdk-11-ea+${JDK_BUILD}_linux-x64-musl_bin.tar.gz"
+ARG JDK_BUILD="27"
+ENV JDK_ARCHIVE="openjdk-11+${JDK_BUILD}_linux-x64-musl_bin.tar.gz"
 
 #RUN mkdir ${JAVA_HOME} && cd ${JAVA_HOME}
 
