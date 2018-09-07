@@ -4,7 +4,7 @@ services:
     build:
       context: https://github.com/keckelt/openjdk11-alpine.git
       args:
-        JDK_BUILD: 25
+        JDK_BUILD: 28
     volumes:
       - './hello_world.jar:/Main.jar'
     command: java -jar /Main.jar
