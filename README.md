@@ -1,6 +1,10 @@
 # Java and Alpine Linux
-The Alpine JDK port is an unsupported release, which is why there are only early access builds currently.
-However, the release candidate with build version 28 was unchanged for the GA Release, so you can consider it as the *General-Availability Release*.
+The Alpine JDK port is an unsupported release, which is why there were only early access builds.
+The Dockerfile in this repo uses the last of these builds, but they are no longer hosted by [java.net](https://jdk.java.net/11/):
+> The Alpine Linux build previously available on this page was removed as of JDK 11 GA. It’s not production-ready because it hasn’t been tested thoroughly enough to be considered a GA build.
+
+Consider using one of the [OpenJDK images](https://hub.docker.com/_/openjdk) instead (e.g. `12-jdk-alpine`) or checkout the [Java12 branch](https://github.com/keckelt/openjdk11-alpine/tree/java12).
+
 
 The JDK port for the Alpine Linux distribution, and in particular the musl C library, is part of the [Portola Project](http://openjdk.java.net/projects/portola).
 
