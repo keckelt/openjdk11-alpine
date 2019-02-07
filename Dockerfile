@@ -4,11 +4,12 @@ FROM alpine:3.8
 # Default to UTF-8 file.encoding
 ENV LANG C.UTF-8
 
-# There might be newer builds, but not all are published (for apline) at: http://jdk.java.net/11/
+# There might be newer builds, but not all are published (for apline) at: http://jdk.java.net/12/
 
-ENV JAVA_HOME="/jdk-11"
-ARG JDK_BUILD="28"
-ENV JDK_ARCHIVE="openjdk-11+${JDK_BUILD}_linux-x64-musl_bin.tar.gz"
+ENV JAVA_HOME="/jdk-12"
+ARG JDK_BUILD="29"
+ENV JDK_ARCHIVE="openjdk-12-ea+${JDK_BUILD}_linux-x64-musl_bin.tar.gz"
+# e.g. https://download.java.net/java/early_access/alpine/29/binaries/openjdk-12-ea+29_linux-x64-musl_bin.tar.gz
 
 #RUN mkdir ${JAVA_HOME} && cd ${JAVA_HOME}
 
@@ -19,7 +20,7 @@ RUN echo "Downloading sha256 checksum"
 RUN wget https://download.java.net/java/early_access/alpine/${JDK_BUILD}/binaries/${JDK_ARCHIVE}.sha256
 
 RUN echo "Verify checksum"
-# Two spaces bewteen hash & filename, as the output of 'sha256sum openjdk-11-...tar.gz'
+# Two spaces bewteen hash & filename, as the output of 'sha256sum openjdk-12-...tar.gz'
 RUN echo "  ${JDK_ARCHIVE}" >> ${JDK_ARCHIVE}.sha256
 RUN sha256sum -c ${JDK_ARCHIVE}.sha256
 
@@ -35,8 +36,8 @@ RUN rm ${JAVA_HOME}/lib/src.zip
 
 ENV PATH=$PATH:${JAVA_HOME}/bin
 
-ENV JAVA_VERSION 11-ea+${JDK_BUILD}
-ENV JAVA_ALPINE_VERSION 11~${JDK_BUILD}-1
+ENV JAVA_VERSION 12-ea+${JDK_BUILD}
+ENV JAVA_ALPINE_VERSION 12~${JDK_BUILD}-1
 
 RUN echo $PATH
 

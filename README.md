@@ -8,14 +8,14 @@ The JDK port for the Alpine Linux distribution, and in particular the musl C lib
 
 # Build
 ```
-docker build -t openjdk11-alpine .
+docker build -t openjdk2-alpine .
 ```
 
 
 # Run
 Run interactive (`-i`) to use jshell:
 ```
-docker run -it openjdk11-alpine
+docker run -it openjdk12-alpine
 ```
 ## JShell
 Leave:
@@ -30,7 +30,7 @@ version: '2.0'
 services:
   jar_container:
     build:
-      context: https://github.com/keckelt/openjdk11-alpine
+      context: https://github.com/keckelt/openjdk12-alpine
     volumes:
       - './hello_world.jar:/Main.jar'
     command: java -jar /Main.jar
