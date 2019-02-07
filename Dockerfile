@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM alpine:latest
 
 
 # Default to UTF-8 file.encoding

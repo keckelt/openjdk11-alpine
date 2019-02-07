@@ -35,7 +35,7 @@ version: '2.0'
 services:
   jar_container:
     build:
-      context: https://github.com/keckelt/openjdk12-alpine
+      context: https://github.com/keckelt/openjdk11-alpine.git#java12
     volumes:
       - './hello_world.jar:/Main.jar'
     command: java -jar /Main.jar
